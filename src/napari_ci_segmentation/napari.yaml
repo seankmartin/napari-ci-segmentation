@@ -1,0 +1,48 @@
+name: napari-ci-segmentation
+display_name: napari CI segementation
+contributions:
+  commands:
+    - id: napari-ci-segmentation.get_reader
+      python_name: napari_ci_segmentation._reader:napari_get_reader
+      title: Open data with napari CI segementation
+    - id: napari-ci-segmentation.write_multiple
+      python_name: napari_ci_segmentation._writer:write_multiple
+      title: Save multi-layer data with napari CI segementation
+    - id: napari-ci-segmentation.write_single_image
+      python_name: napari_ci_segmentation._writer:write_single_image
+      title: Save image data with napari CI segementation
+    - id: napari-ci-segmentation.make_sample_data
+      python_name: napari_ci_segmentation._sample_data:make_sample_data
+      title: Load sample data from napari CI segementation
+    - id: napari-ci-segmentation.make_qwidget
+      python_name: napari_ci_segmentation._widget:ExampleQWidget
+      title: Make example QWidget
+    - id: napari-ci-segmentation.make_magic_widget
+      python_name: napari_ci_segmentation._widget:example_magic_widget
+      title: Make example magic widget
+    - id: napari-ci-segmentation.make_func_widget
+      python_name: napari_ci_segmentation._widget:example_function_widget
+      title: Make example function widget
+  readers:
+    - command: napari-ci-segmentation.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy']
+  writers:
+    - command: napari-ci-segmentation.write_multiple
+      layer_types: ['image*','labels*']
+      filename_extensions: []
+    - command: napari-ci-segmentation.write_single_image
+      layer_types: ['image']
+      filename_extensions: ['.npy']
+  sample_data:
+    - command: napari-ci-segmentation.make_sample_data
+      display_name: napari CI segementation
+      key: unique_id.1
+  widgets:
+    - command: napari-ci-segmentation.make_qwidget
+      display_name: Example QWidget
+    - command: napari-ci-segmentation.make_magic_widget
+      display_name: Example Magic Widget
+    - command: napari-ci-segmentation.make_func_widget
+      autogenerate: true
+      display_name: Example Function Widget
