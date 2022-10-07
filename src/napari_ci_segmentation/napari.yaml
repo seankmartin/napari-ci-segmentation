@@ -14,15 +14,9 @@ contributions:
     - id: napari-ci-segmentation.make_sample_data
       python_name: napari_ci_segmentation._sample_data:make_sample_data
       title: Load sample data from napari CI segementation
-    - id: napari-ci-segmentation.make_qwidget
-      python_name: napari_ci_segmentation._widget:ExampleQWidget
-      title: Make example QWidget
-    - id: napari-ci-segmentation.make_magic_widget
-      python_name: napari_ci_segmentation._widget:example_magic_widget
-      title: Make example magic widget
-    - id: napari-ci-segmentation.make_func_widget
-      python_name: napari_ci_segmentation._widget:example_function_widget
-      title: Make example function widget
+    - id: napari-ci-segmentation.segmentation_widget
+      python_name: napari_ci_segmentation._widget:segmentation_widget
+      title: CI Segmentation
   readers:
     - command: napari-ci-segmentation.get_reader
       accepts_directories: false
@@ -39,10 +33,5 @@ contributions:
       display_name: napari CI segementation
       key: unique_id.1
   widgets:
-    - command: napari-ci-segmentation.make_qwidget
-      display_name: Example QWidget
-    - command: napari-ci-segmentation.make_magic_widget
-      display_name: Example Magic Widget
-    - command: napari-ci-segmentation.make_func_widget
-      autogenerate: true
-      display_name: Example Function Widget
+    - command: napari-ci-segmentation.segmentation_widget
+      display_name: CI Segmentation
