@@ -57,7 +57,12 @@ def smooth_labels(
 
 
 @magic_factory(persist=True)
-def segmentation_widget(viewer: "napari.Viewer", image: "napari.layers.Image", blur_sigma: float = 2.0, disk_size: int = 4):
+def segmentation_widget(
+    viewer: "napari.Viewer",
+    image: "napari.layers.Image",
+    blur_sigma: float = 2.0,
+    disk_size: int = 4,
+):
     """
     Segment cells from calcium image max projection.
 
@@ -83,6 +88,7 @@ def segmentation_widget(viewer: "napari.Viewer", image: "napari.layers.Image", b
         By default 4.
 
     """
+
     def display_layer(args) -> "napari.types.LayerDataTuple":
         name, data, as_image = args
         if name in viewer.layers:
